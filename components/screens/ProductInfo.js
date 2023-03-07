@@ -98,40 +98,14 @@ const ProductInfo = ({ route, navigation }) => {
   }
 
   return (
-    <SafeAreaView
-      style={{
-        width: '100%',
-        height: '100%',
-        backgroundColor: COLOURS.white,
-        position: 'relative'
-      }}
-    >
+    <SafeAreaView className='w-full h-full bg-white relative'>
       <StatusBar
         backgroundColor={COLOURS.backgroundLight}
         barStyle='dark-content'
       />
       <ScrollView>
-        <View
-          style={{
-            width: '100%',
-            backgroundColor: COLOURS.backgroundLight,
-            borderBottomRightRadius: 20,
-            borderBottomLeftRadius: 20,
-            position: 'relative',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: 4
-          }}
-        >
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              paddingTop: 16,
-              paddingLeft: 16
-            }}
-          >
+        <View className='w-full bg-backgroundLight rounded-br-2xl rounded-bl-2xl relative justify-center items-center mb-1'>
+          <View className='w-full flex-row justify-between pt-4 pl-4'>
             <TouchableOpacity onPress={() => navigation.goBack()}>
               <Entypo
                 name='chevron-left'
@@ -159,16 +133,7 @@ const ProductInfo = ({ route, navigation }) => {
             )}
           />
 
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: 16,
-              marginTop: 32
-            }}
-          >
+          <View className='w-full flex-row items-center justify-center mb-4 mt-8'>
             {product.productImageList
               ? product.productImageList.map((data, index) => {
                   let opacity = position.interpolate({
@@ -179,13 +144,9 @@ const ProductInfo = ({ route, navigation }) => {
                   return (
                     <Animated.View
                       key={index}
+                      className='w-[16%] h-[2.4] bg-black mx-1 rounded-[100]'
                       style={{
-                        width: '16%',
-                        height: 2.4,
-                        backgroundColor: COLOURS.black,
-                        opacity,
-                        marginHorizontal: 4,
-                        borderRadius: 100
+                        opacity
                       }}
                     ></Animated.View>
                   )
@@ -194,19 +155,8 @@ const ProductInfo = ({ route, navigation }) => {
           </View>
         </View>
 
-        <View
-          style={{
-            paddingHorizontal: 16,
-            marginTop: 6
-          }}
-        >
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginVertical: 14
-            }}
-          >
+        <View className='px-4 mt-2'>
+          <View className='flex-row items-center my-3'>
             <Entypo
               name='shopping-cart'
               style={{
@@ -216,34 +166,11 @@ const ProductInfo = ({ route, navigation }) => {
               }}
             />
 
-            <Text
-              style={{
-                fontSize: 12,
-                color: COLOURS.black
-              }}
-            >
-              Shopping
-            </Text>
+            <Text className='text-xs text-black'>Shopping</Text>
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              marginVertical: 4,
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 24,
-                fontWeight: '600',
-                letterSpacing: 0.5,
-                marginVertical: 4,
-                color: COLOURS.black,
-                maxWidth: '84%'
-              }}
-            >
+          <View className='flex-row my-1 items-center justify-between'>
+            <Text className='text-xl font-semibold tracking-widest my-1 text-black max-w-[84%]'>
               {product.productName}
             </Text>
             <Ionicons
@@ -258,51 +185,13 @@ const ProductInfo = ({ route, navigation }) => {
             />
           </View>
 
-          <Text
-            style={{
-              fontSize: 12,
-              color: COLOURS.black,
-              fontWeight: '400',
-              letterSpacing: 1,
-              opacity: 0.5,
-              lineHeight: 20,
-              maxWidth: '85%',
-              maxHeight: 44,
-              marginBottom: 18
-            }}
-          >
+          <Text className='text-xs text-black tracking-widest font-light leading-5 max-w-[85%] max-h-[44] mb-4'>
             {product.description}
           </Text>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginVertical: 14,
-              borderBottomColor: COLOURS.backgroundLight,
-              borderBottomWidth: 1,
-              paddingBottom: 20
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                width: '80%',
-                alignItems: 'center'
-              }}
-            >
-              <View
-                style={{
-                  color: COLOURS.blue,
-                  backgroundColor: COLOURS.backgroundLight,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: 12,
-                  borderRadius: 100,
-                  marginRight: 10
-                }}
-              >
+          <View className='flex-row items-center justify-between my-3 border-b-1 border-backgroundLight pb-4'>
+            <View className='flex-row w-[80%] items-center'>
+              <View className='text-blue bg-backgroundLight items-center justify-center p-2 rounded-[100] mr-2'>
                 <Entypo
                   name='location-pin'
                   style={{
@@ -324,24 +213,21 @@ const ProductInfo = ({ route, navigation }) => {
             />
           </View>
 
-          <View
-            style={{
-              paddingHorizontal: 16
-            }}
-          >
+          <View className='px-8'>
             <Text
-              style={{
-                fontSize: 18,
-                fontWeight: '500',
-                maxWidth: '85%',
-                color: COLOURS.black,
-                marginBottom: 4
-              }}
+              className='text-sm font-medium text-black max-w-[85%] mb-4'
+              // style={{
+              //   fontSize: 18,
+              //   fontWeight: '500',
+              //   maxWidth: '85%',
+              //   color: COLOURS.black,
+              //   marginBottom: 4
+              // }}
             >
               &#8377; {product.productPrice}.00
             </Text>
 
-            <Text>
+            <Text className='mb-20'>
               Tax Rate 2%~ &#8377;{product.productPrice / 20} (&#8377;{' '}
               {product.productPrice + product.productPrice / 20})
             </Text>
@@ -349,36 +235,12 @@ const ProductInfo = ({ route, navigation }) => {
         </View>
       </ScrollView>
 
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 10,
-          height: '8%',
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
+      <View className='absolute bottom-2 h-[8%] w-full justify-center items-center'>
         <TouchableOpacity
           onPress={() => (product.isAvailable ? addToCart(product.id) : null)}
-          style={{
-            width: '86%',
-            height: '90%',
-            backgroundColor: COLOURS.blue,
-            borderRadius: 20,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
+          className='w-[85%] h-[90%] bg-blue rounded-3xl justify-center items-center'
         >
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: '500',
-              letterSpacing: 1,
-              color: COLOURS.white,
-              textTransform: 'uppercase'
-            }}
-          >
+          <Text className='text-xs font-medium tracking-widest uppercase text-white'>
             {product.isAvailable ? 'Add to cart' : 'Not Available'}
           </Text>
         </TouchableOpacity>

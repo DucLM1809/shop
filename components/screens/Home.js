@@ -103,7 +103,7 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView className={`w-full h-full bg-[#fff]`}>
+    <SafeAreaView className={`w-full h-full bg-white`}>
       <StatusBar backgroundColor={COLOURS.white} barStyle='dark-content' />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className='w-full flex flex-row justify-between p-4'>

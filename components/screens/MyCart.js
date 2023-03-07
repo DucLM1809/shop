@@ -91,72 +91,24 @@ const MyCart = ({ navigation }) => {
           navigation.navigate('ProductInfo', { productID: data.id })
         }
         key={index}
-        style={{
-          width: '100%',
-          height: 100,
-          marginVertical: 6,
-          flexDirection: 'row',
-          alignItems: 'center'
-        }}
+        className='w-full h-[100px] my-1 flex-row items-center'
       >
-        <View
-          style={{
-            width: '30%',
-            height: 100,
-            padding: 14,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: COLOURS.backgroundLight,
-            borderRadius: 10,
-            marginRight: 22
-          }}
-        >
+        <View className='w-[30%] h-[100] p-3 justify-center items-center bg-backgroundLight rounded-md mr-5'>
           <Image
             source={data.productImage}
-            style={{
-              width: '100%',
-              height: '100%',
-              resizeMode: 'contain'
-            }}
+            resizeMode='contain'
+            className='w-full h-full'
           />
         </View>
 
-        <View
-          style={{
-            flex: 1,
-            height: '100%',
-            justifyContent: 'space-around'
-          }}
-        >
-          <View style={{}}>
-            <Text
-              style={{
-                fontSize: 14,
-                maxWidth: '100%',
-                color: COLOURS.black,
-                fontWeight: '600',
-                letterSpacing: 1
-              }}
-            >
+        <View className='flex-1 h-full justify-around'>
+          <View>
+            <Text className='text-sm max-w-full text-black font-semibold tracking-widest'>
               {data.productName}
             </Text>
 
-            <View
-              style={{
-                marginTop: 4,
-                flexDirection: 'row',
-                alignItems: 'center',
-                opacity: 0.6
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 14,
-                  fontWeight: '400',
-                  maxWidth: '85%',
-                  marginRight: 4
-                }}
-              >
+            <View className='mt-1 flex-row items-center opacity-60'>
+              <Text className='text-sm font-normal max-w-[85%] mr-1'>
                 &#8377;{data.productPrice}
               </Text>
 
@@ -166,28 +118,18 @@ const MyCart = ({ navigation }) => {
             </View>
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center'
-              }}
-            >
+          <View className='flex-row justify-between items-center'>
+            <View className='flex-row items-center'>
               <View
-                style={{
-                  borderRadius: 100,
-                  marginRight: 20,
-                  padding: 4,
-                  borderWidth: 1,
-                  borderColor: COLOURS.backgroundMedium,
-                  opacity: 0.5
-                }}
+                className='rounded-full mr-5 p-1 border border-backgroundMedium opacity-50'
+                //   style={{
+                //     borderRadius: 100,
+                //     marginRight: 20,
+                //     padding: 4,
+                //     borderWidth: 1,
+                //     borderColor: COLOURS.backgroundMedium,
+                //     opacity: 0.5
+                //   }}
               >
                 <MaterialCommunityIcons
                   name='minus'
@@ -197,16 +139,7 @@ const MyCart = ({ navigation }) => {
 
               <Text>1</Text>
 
-              <View
-                style={{
-                  borderRadius: 100,
-                  marginLeft: 20,
-                  padding: 4,
-                  borderWidth: 1,
-                  borderColor: COLOURS.backgroundMedium,
-                  opacity: 0.5
-                }}
-              >
+              <View className='rounded-full ml-5 p-1 border border-backgroundMedium opacity-50'>
                 <MaterialCommunityIcons
                   name='plus'
                   style={{ fontSize: 16, color: COLOURS.backgroundDark }}
@@ -242,16 +175,7 @@ const MyCart = ({ navigation }) => {
       }}
     >
       <ScrollView>
-        <View
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            paddingTop: 16,
-            paddingHorizontal: 16,
-            justifyContent: 'space-between',
-            alignItems: 'center'
-          }}
-        >
+        <View className='w-full flex-row pt-4 px-4 justify-between items-center'>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <MaterialCommunityIcons
               name='chevron-left'
@@ -265,30 +189,12 @@ const MyCart = ({ navigation }) => {
             />
           </TouchableOpacity>
 
-          <Text
-            style={{
-              fontSize: 14,
-              color: COLOURS.black,
-              fontWeight: '400'
-            }}
-          >
-            Order Details
-          </Text>
+          <Text className='text-sm text-black font-normal'>Order Details</Text>
 
           <View></View>
         </View>
 
-        <Text
-          style={{
-            fontSize: 20,
-            color: COLOURS.black,
-            fontWeight: '500',
-            letterSpacing: 1,
-            paddingTop: 20,
-            paddingLeft: 16,
-            marginBottom: 10
-          }}
-        >
+        <Text className='text-xl text-black font-medium tracking-widest pt-5 pl-4 mb-3'>
           My Cart
         </Text>
 
@@ -297,49 +203,14 @@ const MyCart = ({ navigation }) => {
         </View>
 
         <View>
-          <View
-            style={{
-              paddingHorizontal: 16,
-              marginVertical: 10
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 16,
-                color: COLOURS.black,
-                fontWeight: '500',
-                letterSpacing: 1,
-                marginBottom: 20
-              }}
-            >
+          <View className='px-4 my-3'>
+            <Text className='text-lg text-black font-semibold tracking-widest mb-4'>
               Delivery Location
             </Text>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: 'row',
-                  width: '80%',
-                  alignItems: 'center'
-                }}
-              >
-                <View
-                  style={{
-                    color: COLOURS.blue,
-                    backgroundColor: COLOURS.backgroundLight,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: 12,
-                    borderRadius: 10,
-                    marginRight: 18
-                  }}
-                >
+            <View className='flex-row items-center justify-between'>
+              <View className='flex-row w-[80%] items-center'>
+                <View className='text-blue bg-backgroundLight items-center justify-center p-3 rounded-md mr-5'>
                   <MaterialCommunityIcons
                     name='truck-delivery-outline'
                     style={{
@@ -350,24 +221,10 @@ const MyCart = ({ navigation }) => {
                 </View>
 
                 <View>
-                  <Text
-                    style={{
-                      fontSize: 14,
-                      color: COLOURS.black,
-                      fontWeight: '500'
-                    }}
-                  >
+                  <Text className='text-sm text-black font-semibold'>
                     2 Petre Melikishvili St.
                   </Text>
-                  <Text
-                    style={{
-                      fontSize: 12,
-                      color: COLOURS.black,
-                      fontWeight: '400',
-                      lineHeight: 20,
-                      opacity: 0.5
-                    }}
-                  >
+                  <Text className='text-xs text-black font-normal leading-5 opacity-50'>
                     0162, Tbilisi
                   </Text>
                 </View>
@@ -383,80 +240,24 @@ const MyCart = ({ navigation }) => {
             </View>
           </View>
 
-          <View
-            style={{
-              paddingHorizontal: 16,
-              marginVertical: 10
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 16,
-                color: COLOURS.black,
-                fontWeight: '500',
-                letterSpacing: 1,
-                marginBottom: 20
-              }}
-            >
+          <View className='px-4 my-3'>
+            <Text className='text-lg text-black font-semibold tracking-widest mb-4'>
               Payment Method
             </Text>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: 'row',
-                  width: '80%',
-                  alignItems: 'center'
-                }}
-              >
-                <View
-                  style={{
-                    color: COLOURS.blue,
-                    backgroundColor: COLOURS.backgroundLight,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: 12,
-                    borderRadius: 10,
-                    marginRight: 18
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: 10,
-                      fontWeight: '900',
-                      color: COLOURS.blue,
-                      letterSpacing: 1
-                    }}
-                  >
+            <View className='flex-row items-center justify-between'>
+              <View className='flex-row w-[80%] items-center'>
+                <View className='text-blue bg-backgroundLight items-center justify-center p-3 rounded-md mr-4'>
+                  <Text className='text-[10px] font-[900] text-blue tracking-widest'>
                     VISA
                   </Text>
                 </View>
 
                 <View>
-                  <Text
-                    style={{
-                      fontSize: 14,
-                      color: COLOURS.black,
-                      fontWeight: '500'
-                    }}
-                  >
+                  <Text className='text-sm text-black font-semibold'>
                     Visa Classic
                   </Text>
-                  <Text
-                    style={{
-                      fontSize: 12,
-                      color: COLOURS.black,
-                      fontWeight: '400',
-                      lineHeight: 20,
-                      opacity: 0.5
-                    }}
-                  >
+                  <Text className='text-xs text-black font-normal leading-5 opacity-50'>
                     ****-0902
                   </Text>
                 </View>
@@ -472,114 +273,34 @@ const MyCart = ({ navigation }) => {
             </View>
           </View>
 
-          <View
-            style={{
-              paddingHorizontal: 16,
-              marginTop: 40,
-              marginBottom: 80
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 16,
-                color: COLOURS.black,
-                fontWeight: '500',
-                letterSpacing: 1,
-                marginBottom: 20
-              }}
-            >
+          <View className='px-4 mt-10 mb-20'>
+            <Text className='text-base text-black font-medium tracking-widest mb-6'>
               Order Info
             </Text>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: 8
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: '400',
-                  maxWidth: '80%',
-                  color: COLOURS.black,
-                  opacity: 0.5
-                }}
-              >
+            <View className='flex-row items-center justify-between mb-2'>
+              <Text className='text-xs font-normal max-w-[80%] opacity-50'>
                 Subtotal
               </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: '400',
-                  maxWidth: '80%',
-                  color: COLOURS.black,
-                  opacity: 0.8
-                }}
-              >
+              <Text className='text-xs font-normal max-w-[80%] opacity-80'>
                 &#8377;{total}.00
               </Text>
             </View>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: 22
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: '400',
-                  maxWidth: '80%',
-                  color: COLOURS.black,
-                  opacity: 0.5
-                }}
-              >
+            <View className='flex-row items-center justify-between mb-4'>
+              <Text className='text-xs font-normal max-w-[80%] opacity-50'>
                 Shipping Tax
               </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: '400',
-                  maxWidth: '80%',
-                  color: COLOURS.black,
-                  opacity: 0.8
-                }}
-              >
+              <Text className='text-xs font-normal max-w-[80%] opacity-80'>
                 &#8377;{total / 20}
               </Text>
             </View>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: '400',
-                  maxWidth: '80%',
-                  color: COLOURS.black,
-                  opacity: 0.5
-                }}
-              >
+            <View className='flex-row items-center justify-between'>
+              <Text className='text-xs font-normal max-w-[80%] opacity-50'>
                 Total
               </Text>
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: '500',
-                  color: COLOURS.black
-                }}
-              >
+              <Text className='text-lg font-medium text-black'>
                 &#8377;{total + total / 20}
               </Text>
             </View>
@@ -587,36 +308,12 @@ const MyCart = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 10,
-          height: '8%',
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
+      <View className='absolute bottom-2 h-[8%] w-full justify-center items-center'>
         <TouchableOpacity
           onPress={() => (total !== 0 ? checkOut() : null)}
-          style={{
-            width: '86%',
-            height: '90%',
-            backgroundColor: COLOURS.blue,
-            borderRadius: 20,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
+          className='w-[85%] h-[90%] bg-blue rounded-3xl justify-center items-center'
         >
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: '500',
-              letterSpacing: 1,
-              color: COLOURS.white,
-              textTransform: 'uppercase'
-            }}
-          >
+          <Text className='text-xs font-medium tracking-widest uppercase text-white'>
             CHECKOUT (&#8377;{total + total / 20})
           </Text>
         </TouchableOpacity>
